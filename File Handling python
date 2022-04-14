@@ -1,0 +1,52 @@
+# untuk file berada di lokasi yang sama:
+f = open("gila.txt" , "rt")
+print(f.read())
+
+# untuk menampilkan text dengan 5 karakter:
+f = open("gila.txt", "r")
+print(f.read(5))
+
+# untuk file berada di lokasi yang berbeda:
+f = open("/home/blackpirate/Documents/amat.txt" , "r")
+print(f.read())
+
+# menanpilkan satu baris file:
+f = open("gila.txt" , "r")
+print(f.readline()) # untuk satu baris pakai satu aja
+print(f.readline()) # yang ini untuk 2 bari dan seterusnya
+print(f.readline())
+
+# menampilkan berulang kali file baris demi baris:
+f = open("gila.txt" , "r")
+for x in f:
+    print(x)
+
+# menutup file ketika anda selesai dengan file tersebut:
+f = open("gila.txt" , "r")
+print(f.readline())
+f.close()   # gunakan ini untuk menutup file anda!
+
+# membuat file txt dan memasukkan:
+f = open("mami.txt" , "a")
+f.write("Halo nama saya Muhammad Irpan!")
+f.close()
+
+# membuka file di atas:
+f = open("mami.txt" , "r")
+print(f.read())
+
+# menimpa text di dalam file mami.txt:
+f = open("mami.txt", "w")
+f.write("Woops! I have deleted the content!")
+f.close()
+
+# membuka file di atas:
+f = open("mami.txt", "r")
+print(f.read())
+
+
+# membuat file yang sudah di panggil
+f = open("halo.txt" , "x")
+
+# membuat file baru jika belum ada:
+f = open("world.txt" , "w")
