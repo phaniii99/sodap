@@ -1,0 +1,33 @@
+CREATE TABLE detailling (
+id_detailling INT(10), 
+jenis_mobil INT(10), 
+tipe_detailling varchar(255) NOT NULL,
+harga INT(10) NOT NULL,
+created_at TIMESTAMP NOT NULL, 
+update_at TIMESTAMP NOT NULL, 
+PRIMARY KEY (id_detailling), 
+FOREIGN KEY (jenis_mobil) REFERENCES jenis_mobil(id));
+
+
+members = 
+CREATE TABLE members (
+id_member INT(10), 
+nama VARCHAR(255) NOT NULL, 
+tgl_lahir DATE NOT NULL, 
+j_k VARCHAR(255) NOT NULL, 
+alamat VARCHAR(255) NOT NULL, 
+nohp VARCHAR(255) NOT NULL, 
+password VARCHAR(255) NOT NULL, 
+saldo INT(10) NOT NULL, 
+created_at TIMESTAMP NOT NULL, 
+update_at TIMESTAMP NOT NULL, 
+PRIMARY KEY (id_member));
+
+
+jenis mobil = 
+CREATE TABLE jenis_mobil (
+jenis_mobil VARCHAR(255) NOT NULL, 
+id INT(10), 
+created_at INT(10) NOT NULL, 
+update_at INT(10) NOT NULL, 
+PRIMARY KEY (id));
