@@ -10,6 +10,7 @@ PRIMARY KEY (id_detailling),
 FOREIGN KEY (jenis_mobil) REFERENCES jenis_mobil(id));
 
 
+
 # mebers-----
 CREATE TABLE members (
 id_member INT(10), 
@@ -25,6 +26,7 @@ update_at TIMESTAMP NOT NULL,
 PRIMARY KEY (id_member));
 
 
+
 # jenis mobil-----
 CREATE TABLE jenis_mobil (
 jenis_mobil VARCHAR(255) NOT NULL, 
@@ -32,3 +34,70 @@ id INT(10),
 created_at INT(10) NOT NULL, 
 update_at INT(10) NOT NULL, 
 PRIMARY KEY (id));
+
+
+
+# transaksi-----
+CREATE TABLE transaksi (
+id INT(10),
+id_pendaftaran INT(10),
+id_cuci INT(10),
+id_coating INT(10),
+id_detailling INT(10),
+total_harga INT(11) NOT NULL,
+created_at TIMESTAMP NOT NULL,
+update_at TIMESTAMP NOT NULL,
+PRIMARI KEY (id),
+FOREIGN KEY (id_pendaftaran) REFERENCES ?,
+FOREIGN KEY (id_cuci) REFERENCES hargacuci(id_cuci),
+FOREIGN KEY (id_coating) REFERENCES coating(id_coating),
+FOREIGN KEY (id_detailling) REFERENCES detailling(id_detailling));
+
+
+
+# coating----
+CREATE TABLE coating (
+id_coating INT(10),
+jenis_mobil INT(10),
+tipe_coating VARCHAR(255) NOT NULL,
+harga INT(10) NOT NULL,
+created_at TIMESTAMP NOT NULL,
+update_at TIMESTAMP NOT NULL,
+PRIMARY KEY (id_coating),
+FOREIGN KEY (jenis_mobil) REFERENCES jenis_mobil(id));
+
+
+
+# hargacuci-----
+CREATE TABLE hargacuci (
+id_cuci INT(10),
+jenis_mobil INT(10),
+tipe_cuci VARCHAR(255) NOT NULL,
+harga INT(10) NOT NULL,
+created_at INT(10) NOT NULL,
+update_at INT(10) NOT NULL,
+PRIMARY KEY (id_cuci),
+FOREIGN KEY (jenis_mobil) REFERENCES jenis_mobil(id));
+
+
+
+# ?-----
+CREATE TABLE ? (
+id INT(10),
+nohp VARCHAR(255) NOT NULL,
+nama VARCHAR(255) NOT NULL,
+merk_mobil VARCHAR(255) NOT NULL,
+no_polisi VARCHAR(255) NOT NULL,
+id_cuci INT(10),
+id_coating INT(10),
+id_detailling INT(10),
+status INT(10) NOT NULL,
+tglmasuk DATE NOT NULL,
+id_member INT(10),
+created_at TIMESTAMP NOT NULL,
+update_at TIMESTAMP NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (id_cuci) REFERENCES hargacuci(id_cuci),
+FOREIGN KEY (id_coating) REFERENCES coating(id_coating),
+FOREIGN KEY (id_detailling) REFERENCES detailling(id_detailling),
+FOREIGN KEY (id_member) REFERENCES members(id_member));
