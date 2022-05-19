@@ -1,3 +1,4 @@
+# detailling-----
 CREATE TABLE detailling (
 id_detailling INT(10), 
 jenis_mobil INT(10), 
@@ -9,7 +10,7 @@ PRIMARY KEY (id_detailling),
 FOREIGN KEY (jenis_mobil) REFERENCES jenis_mobil(id));
 
 
-members = 
+# mebers-----
 CREATE TABLE members (
 id_member INT(10), 
 nama VARCHAR(255) NOT NULL, 
@@ -24,7 +25,7 @@ update_at TIMESTAMP NOT NULL,
 PRIMARY KEY (id_member));
 
 
-jenis mobil = 
+# jenis mobil-----
 CREATE TABLE jenis_mobil (
 jenis_mobil VARCHAR(255) NOT NULL, 
 id INT(10), 
