@@ -11,7 +11,9 @@ ________________________________________________________________________________
 
 
 ______________________________________________________________________________________
+
 <!----- Membuat database ----->
+
 setelah masuk ke mysql ketikkan :
 
 > SHOW DATABASES;                 --> (untuk melihat databases)
@@ -20,6 +22,7 @@ setelah masuk ke mysql ketikkan :
 > DROP TABLE nama_table;          --> (untuk menghapus database)
 
 ______________________________________________________________________________________
+
 <!----- Table yang di gunakan untuk UTS nanti ----->
 
 # detailling-----
