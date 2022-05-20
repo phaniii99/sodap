@@ -1,3 +1,27 @@
+contact me if you have a problem > myIG_@mhdphan
+_______________________________________________________________________________________
+
+- BUKA APLIKASI 'CONTROL PANNEL XAMPP' KEMUDIAN JALAN KAN MYSQL DAN APPACHE NYA
+
+- KEMUDIAN UNTUK MEMBUKA CMD TEKAN TOMBOL WINDOWS+R (ketik 'CMD' lalu ENTER)
+
+- CARA MASUK KE MYSQL DI CMD
+1. KETIKKAN DI CMD --> CD
+2. KETIK --> CD /XAMPP/BIN/MYSQL -U ROOT -P
+
+
+______________________________________________________________________________________
+<!----- Membuat database ----->
+setelah masuk ke mysql ketikkan :
+
+> SHOW DATABASES;                 --> (untuk melihat databases)
+> CREATE DATABASE nama_database;  --> (untuk membuat database)
+> DROP DATABASE nama_database;    --> (untuk menghapus database)
+> DROP TABLE nama_table;          --> (untuk menghapus database)
+
+______________________________________________________________________________________
+<!----- Table yang di gunakan untuk UTS nanti ----->
+
 # detailling-----
 CREATE TABLE detailling (
 id_detailling INT(10), 
