@@ -5,6 +5,8 @@ alamat TEXT NOT NULL,
 no_telp INT(12) NOT NULL,
 PRIMARY KEY (id_customer));
 
+INSERT INTO customer values (1, 'Muh. Irpan', 'jl. kadrie oening', 082255273312);
+
 CREATE TABLE pemesanan (
 id_pemesan INT(10),
 id_customer INT(10),
@@ -14,6 +16,8 @@ no_telp INT(12) NOT NULL,
 PRIMARY KEY (id_pemesan),
 FOREIGN KEY (id_customer) REFERENCES customer(id_customer));
 
+INSERT INTO pemesanan values (1, 1, 'Sri Wahyuni', 'jl. lempake', 082233556621);
+
 CREATE TABLE barang (
 kode_barang INT(10),
 id_pemesan INT(10),
@@ -22,6 +26,8 @@ harga INT(10) NOT NULL,
 stok INT(10) NOT NULL,
 PRIMARY KEY (kode_barang),
 FOREIGN KEY (id_pemesan) REFERENCES pemesanan(id_pemesan));
+
+INSERT INTO barang values (0121, 1, 'minyak goreng', 40.000, 23);
 
 CREATE TABLE penjual (
 id_penjual INT(10),
@@ -33,6 +39,8 @@ PRIMARY KEY (id_penjual),
 FOREIGN KEY (kode_barang) REFERENCES barang(kode_barang),
 FOREIGN KEY (id_pemesan) REFERENCES pemesanan(id_pemesan));
 
+INSERT INTO penjual values (23, 0121, 1,3, 12-04-2022);
+
 CREATE TABLE petugas (
 nama VARCHAR(255) NOT NULL,
 id_penjual INT(10),
@@ -41,3 +49,4 @@ no_hp INT(12) NOT NULL,
 PRIMARY KEY (id_petugas),
 FOREIGN KEY (id_penjual) REFERENCES penjual(id_penjual));
 
+INSERT INTO petugas values ('dilla' , 23, 13,082255678901);
