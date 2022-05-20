@@ -1,0 +1,43 @@
+CREATE TABLE customer (
+id_customer INT(10),
+nama VARCHAR(255) NOT NULL,
+alamat TEXT NOT NULL,
+no_telp INT(12) NOT NULL,
+PRIMARY KEY (id_customer));
+
+CREATE TABLE pemesanan (
+id_pemesan INT(10),
+id_customer INT(10),
+nama VARCHAR(255) NOT NULL,
+alamat TEXT NOT NULL,
+no_telp INT(12) NOT NULL,
+PRIMARY KEY (id_pemesan),
+FOREIGN KEY (id_customer) REFERENCES customer(id_customer));
+
+CREATE TABLE barang (
+kode_barang INT(10),
+id_pemesan INT(10),
+nama VARCHAR(255) NOT NULL,
+harga INT(10) NOT NULL,
+stok INT(10) NOT NULL,
+PRIMARY KEY (kode_barang),
+FOREIGN KEY (id_pemesan) REFERENCES pemesanan(id_pemesan));
+
+CREATE TABLE penjual (
+id_penjual INT(10),
+kode_barang INT(10),
+id_pemesan INT(10),
+jumlah INT(10) NOT NULL,
+waktu_pemesanan DATE NOT NULL,
+PRIMARY KEY (id_penjual),
+FOREIGN KEY (kode_barang) REFERENCES barang(kode_barang),
+FOREIGN KEY (id_pemesan) REFERENCES pemesanan(id_pemesan));
+
+CREATE TABLE petugas (
+nama VARCHAR(255) NOT NULL,
+id_penjual INT(10),
+id_petugas INT(10),
+no_hp INT(12) NOT NULL,
+PRIMARY KEY (id_petugas),
+FOREIGN KEY (id_penjual) REFERENCES penjual(id_penjual));
+
